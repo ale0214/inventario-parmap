@@ -1,14 +1,14 @@
 package com.parmap.inventario;
 
 public class Producto {
-    private int id;
+    private Integer id;
     private String nombre;
     private int cantidad;
     private double precio;
 
     public Producto() {}
 
-    public Producto(int id, String nombre, int cantidad, double precio) {
+    public Producto(Integer id, String nombre, int cantidad, double precio) {
         this.id = id;
         this.nombre = nombre;
         this.cantidad = cantidad;

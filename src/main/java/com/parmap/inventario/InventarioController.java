@@ -27,19 +27,23 @@ public class InventarioController {
         return "Producto agregado correctamente: " + p.getNombre();
     }
 
-    //  Actualizar producto
+    // Actualizar producto
     @PutMapping("/actualizar/{id}")
     public String actualizar(@PathVariable int id, @RequestBody Producto actualizado) {
+
         for (Producto p : productos) {
             if (p.getId() == id) {
                 p.setNombre(actualizado.getNombre());
                 p.setCantidad(actualizado.getCantidad());
                 p.setPrecio(actualizado.getPrecio());
+
                 return "Producto actualizado correctamente: " + p.getNombre();
             }
         }
-        return "Producto no encontrado";
+
+        return "Producto con ID " + id + " no encontrado.";
     }
+
 
     // Eliminar producto
     @DeleteMapping("/eliminar/{id}")
